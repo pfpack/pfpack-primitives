@@ -3,7 +3,7 @@
 using NUnit.Framework;
 using System.Linq;
 
-namespace PrimeFuncPack.Core.Primitives.Tests
+namespace PrimeFuncPack.Primitives.Tests
 {
     partial class YieldExtensionsTest
     {

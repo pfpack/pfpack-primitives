@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace PrimeFuncPack.Primitives.Tests
 {
-    public sealed partial class PipelineTests
+    public sealed partial class PipelineExtensions
     {
         private static IEnumerable<object?[]> ValueTestSource
             =>

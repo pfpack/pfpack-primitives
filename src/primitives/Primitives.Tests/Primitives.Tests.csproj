@@ -7,8 +7,8 @@
 		<Authors>Andrei Sergeev, Pavel Moskovoy</Authors>
 		<Description>PrimeFuncPack: A Functional Programming Pack for .NET</Description>
 		<Copyright>Copyright © 2020 Andrei Sergeev, Pavel Moskovoy</Copyright>
-		<RootNamespace>PrimeFuncPack.Core.Primitives.Tests</RootNamespace>
-		<AssemblyName>PrimeFuncPack.Core.Primitives.Tests</AssemblyName>
+		<RootNamespace>PrimeFuncPack.Primitives.Tests</RootNamespace>
+		<AssemblyName>PrimeFuncPack.Primitives.Tests</AssemblyName>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -20,10 +20,6 @@
 
 	<ItemGroup>
 	  <ProjectReference Include="..\Primitives\Primitives.csproj" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <Folder Include="Linq\" />
 	</ItemGroup>
 
 </Project>

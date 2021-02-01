@@ -4,7 +4,7 @@ using NUnit.Framework;
 using System;
 using static PrimeFuncPack.UnitTest.TestData;
 
-namespace PrimeFuncPack.Core.Primitives.Tests
+namespace PrimeFuncPack.Primitives.Tests
 {
     public sealed partial class PredicatesTests
     {

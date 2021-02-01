@@ -1,6 +1,6 @@
 ﻿#nullable enable
 
-namespace PrimeFuncPack.Core.Primitives.Tests
+namespace PrimeFuncPack.Primitives.Tests
 {
     public sealed partial class StringsTests
     {
