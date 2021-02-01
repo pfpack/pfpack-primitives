@@ -22,8 +22,4 @@
 	  <ProjectReference Include="..\Primitives\Primitives.csproj" />
 	</ItemGroup>
 
-	<ItemGroup>
-	  <Folder Include="Linq\" />
-	</ItemGroup>
-
 </Project>
