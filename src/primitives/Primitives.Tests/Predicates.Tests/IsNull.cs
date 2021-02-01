@@ -5,7 +5,7 @@ using PrimeFuncPack.UnitTest;
 using System;
 using static PrimeFuncPack.UnitTest.TestData;
 
-namespace PrimeFuncPack.Core.Primitives.Tests
+namespace PrimeFuncPack.Primitives.Tests
 {
     partial class PredicatesTests
     {

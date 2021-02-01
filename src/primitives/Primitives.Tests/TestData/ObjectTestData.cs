@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using static PrimeFuncPack.UnitTest.TestData;
 
-namespace PrimeFuncPack.Core.Primitives.Tests
+namespace PrimeFuncPack.Primitives.Tests
 {
     internal static class ObjectTestData
     {

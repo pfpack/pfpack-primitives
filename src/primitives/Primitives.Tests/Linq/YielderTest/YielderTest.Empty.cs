@@ -4,7 +4,7 @@ using NUnit.Framework;
 using PrimeFuncPack.UnitTest;
 using System.Linq;
 
-namespace PrimeFuncPack.Core.Primitives.Tests
+namespace PrimeFuncPack.Primitives.Tests
 {
     partial class YielderTest
     {
