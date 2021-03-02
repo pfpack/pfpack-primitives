@@ -9,23 +9,23 @@ namespace PrimeFuncPack.Primitives.Tests
     partial class StringExtensionsTests
     {
         [Test]
-        public void OrEmpty_SourceIsNull_ExpectEmpty()
+        public void OrNullIfEmpty_SourceIsEmpty_ExpectNull()
         {
-            string? source = null;
+            string? source = string.Empty;
 
-            var actual = source.OrEmpty();
-            Assert.IsEmpty(actual);
+            var actual = source.OrNullIfEmpty();
+            Assert.IsNull(actual);
         }
 
         [Test]
-        [TestCase(EmptyString)]
+        [TestCase(null)]
         [TestCase(WhiteSpaceString)]
         [TestCase(TabString)]
         [TestCase(SomeString)]
-        public void OrEmpty_SourceIsNotNull_ExpectSourceValue(
-            string source)
+        public void OrNullIfEmpty_SourceIsNotEmpty_ExpectSourceValue(
+            string? source)
         {
-            var actual = source.OrEmpty();
+            var actual = source.OrNullIfEmpty();
             Assert.AreSame(source, actual);
         }
     }

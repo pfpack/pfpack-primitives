@@ -5,9 +5,10 @@ namespace System
     partial class PipelineExtensions
     {
         public static TResult Pipe<T, TResult>(this T value, Func<T, TResult> pipe)
-            =>
-            (pipe ?? throw new ArgumentNullException(nameof(pipe)))
-            .Invoke(value);
+        {
+            _ = pipe ?? throw new ArgumentNullException(nameof(pipe));
+            return pipe.Invoke(value);
+        }
     }
 }
 
@@ -18,8 +19,9 @@ namespace PrimeFuncPack
     partial class PipelineExtensions
     {
         public static TResult PipeSelf<T, TResult>(this T value, Func<T, TResult> pipe)
-            =>
-            (pipe ?? throw new ArgumentNullException(nameof(pipe)))
-            .Invoke(value);
+        {
+            _ = pipe ?? throw new ArgumentNullException(nameof(pipe));
+            return pipe.Invoke(value);
+        }
     }
 }
