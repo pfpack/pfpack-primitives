@@ -26,7 +26,7 @@ namespace PrimeFuncPack.Primitives.Tests
             string source)
         {
             var actual = Strings.OrEmpty(source);
-            Assert.AreEqual(source, actual);
+            Assert.AreSame(source, actual);
         }
     }
 }
