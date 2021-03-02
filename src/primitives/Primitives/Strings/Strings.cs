@@ -14,26 +14,20 @@ namespace System
 
         public static string? OrNullIfEmpty(string? value)
             =>
-            string.IsNullOrEmpty(value) switch
-            {
-                true => null,
-                _ => value
-            };
+            string.IsNullOrEmpty(value)
+                ? null
+                : value;
 
         public static string? OrNullIfWhiteSpace(string? value)
             =>
-            string.IsNullOrWhiteSpace(value) switch
-            {
-                true => null,
-                _ => value
-            };
+            string.IsNullOrWhiteSpace(value)
+                ? null
+                : value;
 
         public static string ToStringOrEmpty<T>(T value)
             =>
-            value switch
-            {
-                 not null => value.ToString() ?? Empty,
-                 _ => Empty
-            };
+            value is not null
+                ? value.ToString() ?? Empty
+                : Empty;
     }
 }
