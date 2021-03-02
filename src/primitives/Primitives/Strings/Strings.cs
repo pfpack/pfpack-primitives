@@ -30,6 +30,10 @@ namespace System
 
         public static string ToStringOrEmpty<T>(T value)
             =>
-            value switch { not null => value.ToString() ?? Empty, _ => Empty };
+            value switch
+            {
+                 not null => value.ToString() ?? Empty,
+                 _ => Empty
+            };
     }
 }
