@@ -26,8 +26,6 @@ namespace System
 
         public static string ToStringOrEmpty<T>(T value)
             =>
-            value is not null
-                ? value.ToString() ?? Empty
-                : Empty;
+            value?.ToString() ?? Empty;
     }
 }
