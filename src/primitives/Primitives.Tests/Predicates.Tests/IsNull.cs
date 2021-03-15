@@ -29,5 +29,50 @@ namespace PrimeFuncPack.Primitives.Tests
             var actual = Predicates.IsNull(source);
             Assert.False(actual);
         }
+
+        [Test]
+        public void IsNull_NullableStructIsNull_ExpectTrue()
+        {
+            int? source = null;
+
+            // Test both nullable struct and common overloads:
+
+            {
+                var actual = Predicates.IsNull(source);
+                Assert.True(actual);
+            }
+
+            {
+                var actual = Predicates.IsNull((object?)source);
+                Assert.True(actual);
+            }
+        }
+
+        [Test]
+        public void IsNull_NullableStructIsNotNull_ExpectFalse()
+        {
+            int? source = 0;
+
+            // Test both nullable struct and common overloads:
+
+            {
+                var actual = Predicates.IsNull(source);
+                Assert.False(actual);
+            }
+
+            {
+                var actual = Predicates.IsNull((object?)source);
+                Assert.False(actual);
+            }
+        }
+
+        [Test]
+        public void IsNull_NonnullableStruct_ExpectFalse()
+        {
+            int source = 0;
+
+            var actual = Predicates.IsNull(source);
+            Assert.False(actual);
+        }
     }
 }

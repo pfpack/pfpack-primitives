@@ -8,12 +8,22 @@ namespace System
     partial class Predicates
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static bool IsNotNull<T>([NotNullWhen(true)][MaybeNullWhen(false)] T value)
+        public static bool IsNotNull<T>([NotNullWhen(true)] T? value)
             =>
             value is not null;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static bool IsNull<T>([NotNullWhen(false)][MaybeNullWhen(true)] T value)
+        public static bool IsNotNull<T>([NotNullWhen(true)] T? value) where T : struct
+            =>
+            value is not null;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool IsNull<T>([NotNullWhen(false)] T? value)
+            =>
+            value is null;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool IsNull<T>([NotNullWhen(false)] T? value) where T : struct
             =>
             value is null;
     }
