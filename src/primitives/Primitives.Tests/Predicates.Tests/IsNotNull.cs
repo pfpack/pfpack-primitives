@@ -44,11 +44,12 @@ namespace PrimeFuncPack.Primitives.Tests
             }
         }
 
+        // Test both zero and non-zero values
         [Test]
-        public void IsNotNull_NullableStructIsNotNull_ExpectTrue()
+        [TestCase(0)]
+        [TestCase(1)]
+        public void IsNotNull_NullableStructIsNotNull_ExpectTrue(int? source)
         {
-            int? source = 0;
-
             // Test both nullable struct and common overloads:
 
             {
@@ -62,11 +63,12 @@ namespace PrimeFuncPack.Primitives.Tests
             }
         }
 
+        // Test both zero and non-zero values
         [Test]
-        public void IsNotNull_NonnullableStruct_ExpectTrue()
+        [TestCase(0)]
+        [TestCase(1)]
+        public void IsNotNull_NonnullableStruct_ExpectTrue(int source)
         {
-            int source = 0;
-
             var actual = Predicates.IsNotNull(source);
             Assert.True(actual);
         }
