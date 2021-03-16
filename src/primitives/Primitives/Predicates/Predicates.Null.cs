@@ -8,7 +8,7 @@ namespace System
     partial class Predicates
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static bool IsNotNull<T>([NotNullWhen(true)] T? value)
+        public static bool IsNotNull<T>([NotNullWhen(true)][MaybeNullWhen(false)] T? value)
             =>
             value is not null;
 
@@ -18,7 +18,7 @@ namespace System
             value is not null;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static bool IsNull<T>([NotNullWhen(false)] T? value)
+        public static bool IsNull<T>([NotNullWhen(false)][MaybeNullWhen(true)] T? value)
             =>
             value is null;
 
