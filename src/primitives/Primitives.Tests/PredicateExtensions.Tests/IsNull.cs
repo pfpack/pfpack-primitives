@@ -27,40 +27,41 @@ namespace PrimeFuncPack.Primitives.Tests
         }
 
         [Test]
-        public void IsNull_NullableStructIsNull_ExpectTrue()
+        public void IsNull_NullableStructIsNull_CallStructOverload_ExpectTrue()
         {
             int? source = null;
 
-            // Test both nullable struct and common overloads:
+            var actual = source.IsNull();
+            Assert.True(actual);
+        }
 
-            {
-                var actual = source.IsNull();
-                Assert.True(actual);
-            }
+        [Test]
+        public void IsNull_NullableStructIsNull_CallObjectOverload_ExpectTrue()
+        {
+            int? source = null;
 
-            {
-                var actual = ((object?)source).IsNull();
-                Assert.True(actual);
-            }
+            var actual = source.IsNull<object>();
+            Assert.True(actual);
         }
 
         // Test both zero and non-zero values
         [Test]
         [TestCase(0)]
         [TestCase(1)]
-        public void IsNull_NullableStructIsNotNull_ExpectFalse(int? source)
+        public void IsNull_NullableStructIsNotNull_CallStructOverload_ExpectFalse(int? source)
         {
-            // Test both nullable struct and common overloads:
+            var actual = source.IsNull();
+            Assert.False(actual);
+        }
 
-            {
-                var actual = source.IsNull();
-                Assert.False(actual);
-            }
-
-            {
-                var actual = ((object?)source).IsNull();
-                Assert.False(actual);
-            }
+        // Test both zero and non-zero values
+        [Test]
+        [TestCase(0)]
+        [TestCase(1)]
+        public void IsNull_NullableStructIsNotNull_CallObjectOverload_ExpectFalse(int? source)
+        {
+            var actual = source.IsNull<object>();
+            Assert.False(actual);
         }
 
         // Test both zero and non-zero values
