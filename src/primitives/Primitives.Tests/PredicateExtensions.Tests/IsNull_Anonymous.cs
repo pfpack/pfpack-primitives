@@ -9,18 +9,12 @@ namespace PrimeFuncPack.Primitives.Tests
     partial class PredicateExtensionsTests
     {
         [Test]
-        public void IsNull_ValueIsNull_ExpectTrue()
+        public void IsNull_AnonymousValueIsNotNull_ExpectFalse()
         {
-            object source = null!;
-
-            var actual = source.IsNull();
-            Assert.True(actual);
-        }
-
-        [Test]
-        public void IsNull_ValueIsNotNull_ExpectFalse()
-        {
-            var source = ZeroIdRefType;
+            var source = new
+            {
+                Text = SomeTextStructType
+            };
 
             var actual = source.IsNull();
             Assert.False(actual);

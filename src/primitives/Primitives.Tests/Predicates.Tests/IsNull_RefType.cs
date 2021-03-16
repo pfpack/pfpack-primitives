@@ -7,24 +7,24 @@ using static PrimeFuncPack.UnitTest.TestData;
 
 namespace PrimeFuncPack.Primitives.Tests
 {
-    partial class PredicateExtensionsTests
+    partial class PredicatesTests
     {
         [Test]
-        public void IsNotNull_ValueIsNull_ExpectFalse()
+        public void IsNull_RefValueIsNull_ExpectTrue()
         {
             RefType source = null!;
 
-            var actual = source.IsNotNull();
-            Assert.False(actual);
+            var actual = Predicates.IsNull(source);
+            Assert.True(actual);
         }
 
         [Test]
-        public void IsNotNull_ValueIsNotNull_ExpectTrue()
+        public void IsNull_RefValueIsNull_ExpectFalse()
         {
             var source = MinusFifteenIdRefType;
 
-            var actual = source.IsNotNull();
-            Assert.True(actual);
+            var actual = Predicates.IsNull(source);
+            Assert.False(actual);
         }
     }
 }
