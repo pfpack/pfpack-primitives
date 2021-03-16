@@ -9,7 +9,7 @@ namespace PrimeFuncPack.Primitives.Tests
     public sealed partial class PredicatesTests
     {
         [Test]
-        public void IsNotNull_ValueIsNull_ExpectFalse()
+        public void IsNotNull_RefValueIsNull_ExpectFalse()
         {
             object source = null!;
 
@@ -18,9 +18,21 @@ namespace PrimeFuncPack.Primitives.Tests
         }
 
         [Test]
-        public void IsNotNull_ValueIsNotNull_ExpectTrue()
+        public void IsNotNull_RefValueIsNotNull_ExpectTrue()
         {
             var source = PlusFifteenIdRefType;
+
+            var actual = Predicates.IsNotNull(source);
+            Assert.True(actual);
+        }
+
+        [Test]
+        public void IsNotNull_AnonimousValueIsNotNull_ExpectTrue()
+        {
+            var source = new
+            {
+                Text = SomeTextStructType
+            };
 
             var actual = Predicates.IsNotNull(source);
             Assert.True(actual);

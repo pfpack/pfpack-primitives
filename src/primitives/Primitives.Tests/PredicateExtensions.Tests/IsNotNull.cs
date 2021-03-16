@@ -10,7 +10,7 @@ namespace PrimeFuncPack.Primitives.Tests
     partial class PredicateExtensionsTests
     {
         [Test]
-        public void IsNotNull_ValueIsNull_ExpectFalse()
+        public void IsNotNull_RefValueIsNull_ExpectFalse()
         {
             RefType source = null!;
 
@@ -19,9 +19,21 @@ namespace PrimeFuncPack.Primitives.Tests
         }
 
         [Test]
-        public void IsNotNull_ValueIsNotNull_ExpectTrue()
+        public void IsNotNull_RefValueIsNotNull_ExpectTrue()
         {
             var source = MinusFifteenIdRefType;
+
+            var actual = source.IsNotNull();
+            Assert.True(actual);
+        }
+
+        [Test]
+        public void IsNotNull_AnonimousValueIsNotNull_ExpectTrue()
+        {
+            var source = new
+            {
+                Text = SomeTextStructType
+            };
 
             var actual = source.IsNotNull();
             Assert.True(actual);
