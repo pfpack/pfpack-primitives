@@ -8,12 +8,12 @@ namespace System
     partial class Predicates
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static bool IsNotNullOrWhiteSpace([NotNullWhen(true)] string? value)
+        public static bool IsNotNullOrWhiteSpace([NotNullWhen(true)][MaybeNullWhen(false)] string? value)
             =>
             string.IsNullOrWhiteSpace(value) is false;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static bool IsNullOrWhiteSpace([NotNullWhen(false)] string? value)
+        public static bool IsNullOrWhiteSpace([NotNullWhen(false)][MaybeNullWhen(true)] string? value)
             =>
             string.IsNullOrWhiteSpace(value);
     }
