@@ -6,10 +6,3 @@ namespace System
     {
     }
 }
-
-namespace PrimeFuncPack
-{
-    public static partial class PipelineExtensions
-    {
-    }
-}
