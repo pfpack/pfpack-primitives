@@ -5,7 +5,7 @@ using static PrimeFuncPack.UnitTest.TestData;
 
 namespace PrimeFuncPack.Primitives.Tests
 {
-    partial class PipelineExtensionsTests
+    partial class ObsoletePipelineExtensionsTests
     {
         // [Test]
         // [TestCaseSource(nameof(ValueTestSource))]
