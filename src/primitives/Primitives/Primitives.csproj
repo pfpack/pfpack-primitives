@@ -7,7 +7,7 @@
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 		<PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
 		<PackageLicenseFile>LICENSE</PackageLicenseFile>
-		<Description>PrimeFuncPack: A Functional Programming Pack for .NET</Description>
+		<Description>PrimeFuncPack Primitives is a core library for .NET consisting of some basic extensions and predicates to make work with functional pipelines, Linq, the nullable feature, etc. easier.</Description>
 		<Copyright>Copyright © 2020-2021 Andrei Sergeev, Pavel Moskovoy</Copyright>
 		<RootNamespace>System</RootNamespace>
 		<AssemblyName>PrimeFuncPack.Primitives</AssemblyName>
