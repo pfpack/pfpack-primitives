@@ -31,8 +31,13 @@ namespace System
                 : value;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static string ToStringOrEmpty<T>(T value)
+        public static string ToStringOrEmpty<T>(T? value)
             =>
             value?.ToString() ?? Empty;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static string ToStringOrEmpty<T>(T? value) where T : struct
+            =>
+            value.ToString() ?? Empty;
     }
 }
