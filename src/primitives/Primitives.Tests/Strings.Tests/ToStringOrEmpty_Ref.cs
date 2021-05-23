@@ -9,18 +9,18 @@ namespace PrimeFuncPack.Primitives.Tests
     partial class StringsTests
     {
         [Test]
-        public void ToStringOrEmpty_SourceIsNull_ExpectEmpty()
+        public void ToStringOrEmpty_Ref_SourceIsNull_ExpectEmpty()
         {
-            ToStringStubType source = null!;
+            ToStringStubRefType? source = null;
 
             var actual = Strings.ToStringOrEmpty(source);
             Assert.IsEmpty(actual);
         }
 
         [Test]
-        public void ToStringOrEmpty_SourceToStringIsNull_ExpectEmpty()
+        public void ToStringOrEmpty_Ref_SourceToStringIsNull_ExpectEmpty()
         {
-            var source = new ToStringStubType(null);
+            ToStringStubRefType? source = new(null);
 
             var actual = Strings.ToStringOrEmpty(source);
             Assert.IsEmpty(actual);
@@ -31,10 +31,10 @@ namespace PrimeFuncPack.Primitives.Tests
         [TestCase(WhiteSpaceString)]
         [TestCase(TabString)]
         [TestCase(SomeString)]
-        public void ToStringOrEmpty_SourceToStringIsNotNull_ExpectActualToStringValue(
+        public void ToStringOrEmpty_Ref_SourceToStringIsNotNull_ExpectActualToStringValue(
             string sourceToStringValue)
         {
-            var source = new ToStringStubType(sourceToStringValue);
+            ToStringStubRefType? source = new(sourceToStringValue);
 
             var actual = Strings.ToStringOrEmpty(source);
             Assert.AreEqual(sourceToStringValue, actual);

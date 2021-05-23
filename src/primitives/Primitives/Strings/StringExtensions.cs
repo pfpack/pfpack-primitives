@@ -22,7 +22,12 @@ namespace System
             Strings.OrNullIfWhiteSpace(value);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static string ToStringOrEmpty<T>(this T value)
+        public static string ToStringOrEmpty<T>(this T? value)
+            =>
+            Strings.ToStringOrEmpty(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static string ToStringOrEmpty<T>(this T? value) where T : struct
             =>
             Strings.ToStringOrEmpty(value);
     }
