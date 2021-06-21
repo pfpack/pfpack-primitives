@@ -38,6 +38,6 @@ namespace System
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static string ToStringOrEmpty<T>(T? value) where T : struct
             =>
-            value.ToString() ?? Empty;
+            value?.ToString() ?? Empty;
     }
 }
