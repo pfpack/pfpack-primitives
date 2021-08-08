@@ -1,0 +1,49 @@
+name: .NET
+
+on:
+  push:
+    branches: [ master ]
+    
+  pull_request:
+    branches: [ master ]
+    
+  release:
+    types: [ published ]
+    branches: [ master ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 5.0.x
+        
+    - name: Create Local NuGet Directory
+      run: mkdir ~/nuget
+      
+    - name: Add Local Nuget Source
+      run: dotnet nuget add source ~/nuget
+      
+    - name: Restore Primitives
+      run: dotnet restore ./src/*/*/Primitives.csproj
+
+    - name: Build Primitives
+      run: dotnet build ./src/*/*/Primitives.csproj --no-restore  -c Release
+
+    - name: Pack Primitives
+      run: dotnet pack ./src/*/*/Primitives.csproj --no-restore -o ~/nuget  -c Release
+      
+    - name: Restore Primitives.Tests
+      run: dotnet restore ./src/*/*/Primitives.Tests.csproj
+
+    - name: Test Primitives.Tests
+      run: dotnet test ./src/*/*/Primitives.Tests.csproj --no-restore  -c Release
+      
+    - name: Push Packages
+      if: ${{ github.event_name == 'release' }}
+      run: dotnet nuget push "../../../nuget/*.nupkg" -s https://api.nuget.org/v3/index.json -k ${{ secrets.NuGetSourcePassword }} --skip-duplicate
