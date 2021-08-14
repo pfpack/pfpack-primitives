@@ -10,7 +10,7 @@ namespace PrimeFuncPack.Primitives.Tests
         [Test]
         [TestCaseSource(typeof(ObjectTestData), nameof(ObjectTestData.NullableObjectTestSource))]
         public void YieldSingle_ExpectCollectionLengthEqualsOne(
-            in object? sourceValue)
+            object? sourceValue)
         {
             var actual = Yielder.YieldSingle(sourceValue);
 
@@ -21,7 +21,7 @@ namespace PrimeFuncPack.Primitives.Tests
         [Test]
         [TestCaseSource(typeof(ObjectTestData), nameof(ObjectTestData.NullableObjectTestSource))]
         public void YieldSingle_ExpectFirstItemIsSameAsSourceValue(
-            in object? sourceValue)
+            object? sourceValue)
         {
             var actual = Yielder.YieldSingle(sourceValue);
 

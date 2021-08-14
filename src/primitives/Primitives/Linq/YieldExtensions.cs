@@ -8,6 +8,8 @@ namespace System.Linq
     public static class YieldExtensions
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static IEnumerable<T> YieldSingle<T>(this T value) => Yielder.YieldSingle(value);
+        public static IEnumerable<T> YieldSingle<T>(this T value)
+            =>
+            Yielder<T>.YieldSingle(value);
     }
 }
