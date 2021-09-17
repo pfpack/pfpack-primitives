@@ -2,7 +2,7 @@ name: .NET
 
 on:
   push:
-    branches: [ master ]
+    branches: [ master, dev, feature/*, fix/*, release/* ]
     
   pull_request:
     branches: [ master ]
@@ -21,14 +21,19 @@ jobs:
     - name: Setup .NET
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: 5.0.x
+        dotnet-version: 6.0.x
+        include-prerelease: true
         
+    # Create Local NuGet Source
+    
     - name: Create Local NuGet Directory
       run: mkdir ~/nuget
       
     - name: Add Local Nuget Source
       run: dotnet nuget add source ~/nuget
       
+    # Primitives
+    
     - name: Restore Primitives
       run: dotnet restore ./src/*/*/Primitives.csproj
 
@@ -44,6 +49,8 @@ jobs:
     - name: Test Primitives.Tests
       run: dotnet test ./src/*/*/Primitives.Tests.csproj --no-restore  -c Release
       
+      # Push
+
     - name: Push Packages
       if: ${{ github.event_name == 'release' }}
       run: dotnet nuget push "../../../nuget/*.nupkg" -s https://api.nuget.org/v3/index.json -k ${{ secrets.NuGetSourcePassword }} --skip-duplicate
