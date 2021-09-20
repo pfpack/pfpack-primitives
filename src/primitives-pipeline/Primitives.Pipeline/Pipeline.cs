@@ -4,7 +4,7 @@ using System.Runtime.CompilerServices;
 
 namespace System
 {
-    partial class Pipeline
+    public static class Pipeline
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static T Pipe<T>(T value) => value;

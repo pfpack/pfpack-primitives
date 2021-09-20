@@ -4,7 +4,7 @@ using System.Runtime.CompilerServices;
 
 namespace System
 {
-    partial class PipelineExtensions
+    public static class PipelineExtensions
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static TResult Pipe<T, TResult>(this T value, Func<T, TResult> pipe)
