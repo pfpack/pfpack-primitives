@@ -32,6 +32,74 @@ jobs:
     - name: Add Local Nuget Source
       run: dotnet nuget add source ~/nuget
       
+    # Primitives.Linq
+    
+    - name: Restore Primitives.Linq
+      run: dotnet restore ./src/*/*/Primitives.Linq.csproj
+
+    - name: Build Primitives.Linq
+      run: dotnet build ./src/*/*/Primitives.Linq.csproj --no-restore  -c Release
+
+    - name: Pack Primitives.Linq
+      run: dotnet pack ./src/*/*/Primitives.Linq.csproj --no-restore -o ~/nuget  -c Release
+      
+    - name: Restore Primitives.Linq.Tests
+      run: dotnet restore ./src/*/*/Primitives.Linq.Tests.csproj
+
+    - name: Test Primitives.Linq.Tests
+      run: dotnet test ./src/*/*/Primitives.Linq.Tests.csproj --no-restore  -c Release
+      
+    # Primitives.Pipeline
+    
+    - name: Restore Primitives.Pipeline
+      run: dotnet restore ./src/*/*/Primitives.Pipeline.csproj
+
+    - name: Build Primitives.Pipeline
+      run: dotnet build ./src/*/*/Primitives.Pipeline.csproj --no-restore  -c Release
+
+    - name: Pack Primitives.Pipeline
+      run: dotnet pack ./src/*/*/Primitives.Pipeline.csproj --no-restore -o ~/nuget  -c Release
+      
+    - name: Restore Primitives.Pipeline.Tests
+      run: dotnet restore ./src/*/*/Primitives.Pipeline.Tests.csproj
+
+    - name: Test Primitives.Pipeline.Tests
+      run: dotnet test ./src/*/*/Primitives.Pipeline.Tests.csproj --no-restore  -c Release
+      
+    # Primitives.Predicates
+    
+    - name: Restore Primitives.Predicates
+      run: dotnet restore ./src/*/*/Primitives.Predicates.csproj
+
+    - name: Build Primitives.Predicates
+      run: dotnet build ./src/*/*/Primitives.Predicates.csproj --no-restore  -c Release
+
+    - name: Pack Primitives.Predicates
+      run: dotnet pack ./src/*/*/Primitives.Predicates.csproj --no-restore -o ~/nuget  -c Release
+      
+    - name: Restore Primitives.Predicates.Tests
+      run: dotnet restore ./src/*/*/Primitives.Predicates.Tests.csproj
+
+    - name: Test Primitives.Predicates.Tests
+      run: dotnet test ./src/*/*/Primitives.Predicates.Tests.csproj --no-restore  -c Release
+      
+    # Primitives.Strings
+    
+    - name: Restore Primitives.Strings
+      run: dotnet restore ./src/*/*/Primitives.Strings.csproj
+
+    - name: Build Primitives.Strings
+      run: dotnet build ./src/*/*/Primitives.Strings.csproj --no-restore  -c Release
+
+    - name: Pack Primitives.Strings
+      run: dotnet pack ./src/*/*/Primitives.Strings.csproj --no-restore -o ~/nuget  -c Release
+      
+    - name: Restore Primitives.Strings.Tests
+      run: dotnet restore ./src/*/*/Primitives.Strings.Tests.csproj
+
+    - name: Test Primitives.Strings.Tests
+      run: dotnet test ./src/*/*/Primitives.Strings.Tests.csproj --no-restore  -c Release
+      
     # Primitives
     
     - name: Restore Primitives
@@ -42,12 +110,6 @@ jobs:
 
     - name: Pack Primitives
       run: dotnet pack ./src/*/*/Primitives.csproj --no-restore -o ~/nuget  -c Release
-      
-    - name: Restore Primitives.Tests
-      run: dotnet restore ./src/*/*/Primitives.Tests.csproj
-
-    - name: Test Primitives.Tests
-      run: dotnet test ./src/*/*/Primitives.Tests.csproj --no-restore  -c Release
       
       # Push
 
