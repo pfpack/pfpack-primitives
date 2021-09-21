@@ -3,10 +3,10 @@ name: .NET
 on:
   push:
     branches: [ master, dev, feature/*, fix/*, release/* ]
-    
+
   pull_request:
     branches: [ master ]
-    
+
   release:
     types: [ published ]
     branches: [ master ]
@@ -23,17 +23,17 @@ jobs:
       with:
         dotnet-version: 6.0.x
         include-prerelease: true
-        
+
     # Create Local NuGet Source
-    
+
     - name: Create Local NuGet Directory
       run: mkdir ~/nuget
       
     - name: Add Local Nuget Source
       run: dotnet nuget add source ~/nuget
-      
+
     # Primitives.Linq
-    
+
     - name: Restore Primitives.Linq
       run: dotnet restore ./src/*/*/Primitives.Linq.csproj
 
@@ -48,9 +48,9 @@ jobs:
 
     - name: Test Primitives.Linq.Tests
       run: dotnet test ./src/*/*/Primitives.Linq.Tests.csproj --no-restore  -c Release
-      
+
     # Primitives.Pipeline
-    
+
     - name: Restore Primitives.Pipeline
       run: dotnet restore ./src/*/*/Primitives.Pipeline.csproj
 
@@ -65,9 +65,9 @@ jobs:
 
     - name: Test Primitives.Pipeline.Tests
       run: dotnet test ./src/*/*/Primitives.Pipeline.Tests.csproj --no-restore  -c Release
-      
+
     # Primitives.Predicates
-    
+
     - name: Restore Primitives.Predicates
       run: dotnet restore ./src/*/*/Primitives.Predicates.csproj
 
@@ -82,9 +82,9 @@ jobs:
 
     - name: Test Primitives.Predicates.Tests
       run: dotnet test ./src/*/*/Primitives.Predicates.Tests.csproj --no-restore  -c Release
-      
+
     # Primitives.Strings
-    
+
     - name: Restore Primitives.Strings
       run: dotnet restore ./src/*/*/Primitives.Strings.csproj
 
@@ -99,9 +99,9 @@ jobs:
 
     - name: Test Primitives.Strings.Tests
       run: dotnet test ./src/*/*/Primitives.Strings.Tests.csproj --no-restore  -c Release
-      
+
     # Primitives
-    
+
     - name: Restore Primitives
       run: dotnet restore ./src/*/*/Primitives.csproj
 
@@ -110,7 +110,7 @@ jobs:
 
     - name: Pack Primitives
       run: dotnet pack ./src/*/*/Primitives.csproj --no-restore -o ~/nuget  -c Release
-      
+
       # Push
 
     - name: Push Packages
