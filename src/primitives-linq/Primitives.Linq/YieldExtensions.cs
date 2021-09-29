@@ -3,13 +3,12 @@
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 
-namespace System.Linq
+namespace System.Linq;
+
+public static class YieldExtensions
 {
-    public static class YieldExtensions
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static IEnumerable<T> YieldSingle<T>(this T value)
-            =>
-            Yielder<T>.YieldSingle(value);
-    }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public static IEnumerable<T> YieldSingle<T>(this T value)
+        =>
+        Yielder<T>.YieldSingle(value);
 }
