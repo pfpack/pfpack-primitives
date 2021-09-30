@@ -4,37 +4,36 @@ using NUnit.Framework;
 using System;
 using static PrimeFuncPack.UnitTest.TestData;
 
-namespace PrimeFuncPack.Primitives.Tests
+namespace PrimeFuncPack.Primitives.Tests;
+
+partial class PredicateExtensionsTests
 {
-    partial class PredicateExtensionsTests
+    [Test]
+    public void IsNullOrEmpty_SourceIsNull_ExpectTrue()
     {
-        [Test]
-        public void IsNullOrEmpty_SourceIsNull_ExpectTrue()
-        {
-            string? source = null;
+        string? source = null;
 
-            var actual = source.IsNullOrEmpty();
-            Assert.True(actual);
-        }
+        var actual = source.IsNullOrEmpty();
+        Assert.True(actual);
+    }
 
-        [Test]
-        public void IsNullOrEmpty_SourceIsEmpty_ExpectTrue()
-        {
-            string source = string.Empty;
+    [Test]
+    public void IsNullOrEmpty_SourceIsEmpty_ExpectTrue()
+    {
+        string source = string.Empty;
 
-            var actual = source.IsNullOrEmpty();
-            Assert.True(actual);
-        }
+        var actual = source.IsNullOrEmpty();
+        Assert.True(actual);
+    }
 
-        [Test]
-        [TestCase(WhiteSpaceString)]
-        [TestCase(TabString)]
-        [TestCase(SomeString)]
-        public void IsNullOrEmpty_SourceIsNotEmpty_ExpectFalse(
-            string source)
-        {
-            var actual = source.IsNullOrEmpty();
-            Assert.False(actual);
-        }
+    [Test]
+    [TestCase(WhiteSpaceString)]
+    [TestCase(TabString)]
+    [TestCase(SomeString)]
+    public void IsNullOrEmpty_SourceIsNotEmpty_ExpectFalse(
+        string source)
+    {
+        var actual = source.IsNullOrEmpty();
+        Assert.False(actual);
     }
 }
