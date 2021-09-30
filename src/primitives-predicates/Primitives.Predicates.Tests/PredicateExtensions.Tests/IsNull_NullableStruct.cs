@@ -3,46 +3,45 @@
 using NUnit.Framework;
 using System;
 
-namespace PrimeFuncPack.Primitives.Tests
+namespace PrimeFuncPack.Primitives.Tests;
+
+partial class PredicateExtensionsTests
 {
-    partial class PredicateExtensionsTests
+    [Test]
+    public void IsNull_NullableStructIsNull_CallStructOverload_ExpectTrue()
     {
-        [Test]
-        public void IsNull_NullableStructIsNull_CallStructOverload_ExpectTrue()
-        {
-            int? source = null;
+        int? source = null;
 
-            var actual = source.IsNull();
-            Assert.True(actual);
-        }
+        var actual = source.IsNull();
+        Assert.True(actual);
+    }
 
-        [Test]
-        public void IsNull_NullableStructIsNull_CallObjectOverload_ExpectTrue()
-        {
-            int? source = null;
+    [Test]
+    public void IsNull_NullableStructIsNull_CallObjectOverload_ExpectTrue()
+    {
+        int? source = null;
 
-            var actual = source.IsNull<object>();
-            Assert.True(actual);
-        }
+        var actual = source.IsNull<object>();
+        Assert.True(actual);
+    }
 
-        // Test both zero and non-zero values
-        [Test]
-        [TestCase(0)]
-        [TestCase(1)]
-        public void IsNull_NullableStructIsNotNull_CallStructOverload_ExpectFalse(int? source)
-        {
-            var actual = source.IsNull();
-            Assert.False(actual);
-        }
+    // Test both zero and non-zero values
+    [Test]
+    [TestCase(0)]
+    [TestCase(1)]
+    public void IsNull_NullableStructIsNotNull_CallStructOverload_ExpectFalse(int? source)
+    {
+        var actual = source.IsNull();
+        Assert.False(actual);
+    }
 
-        // Test both zero and non-zero values
-        [Test]
-        [TestCase(0)]
-        [TestCase(1)]
-        public void IsNull_NullableStructIsNotNull_CallObjectOverload_ExpectFalse(int? source)
-        {
-            var actual = source.IsNull<object>();
-            Assert.False(actual);
-        }
+    // Test both zero and non-zero values
+    [Test]
+    [TestCase(0)]
+    [TestCase(1)]
+    public void IsNull_NullableStructIsNotNull_CallObjectOverload_ExpectFalse(int? source)
+    {
+        var actual = source.IsNull<object>();
+        Assert.False(actual);
     }
 }

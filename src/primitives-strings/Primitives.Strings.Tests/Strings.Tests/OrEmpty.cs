@@ -4,29 +4,28 @@ using NUnit.Framework;
 using System;
 using static PrimeFuncPack.UnitTest.TestData;
 
-namespace PrimeFuncPack.Primitives.Tests
+namespace PrimeFuncPack.Primitives.Tests;
+
+partial class StringsTests
 {
-    partial class StringsTests
+    [Test]
+    public void OrEmpty_SourceIsNull_ExpectEmpty()
     {
-        [Test]
-        public void OrEmpty_SourceIsNull_ExpectEmpty()
-        {
-            string? source = null;
+        string? source = null;
 
-            var actual = Strings.OrEmpty(source);
-            Assert.IsEmpty(actual);
-        }
+        var actual = Strings.OrEmpty(source);
+        Assert.IsEmpty(actual);
+    }
 
-        [Test]
-        [TestCase(EmptyString)]
-        [TestCase(WhiteSpaceString)]
-        [TestCase(TabString)]
-        [TestCase(SomeString)]
-        public void OrEmpty_SourceIsNotNull_ExpectSourceValue(
-            string source)
-        {
-            var actual = Strings.OrEmpty(source);
-            Assert.AreSame(source, actual);
-        }
+    [Test]
+    [TestCase(EmptyString)]
+    [TestCase(WhiteSpaceString)]
+    [TestCase(TabString)]
+    [TestCase(SomeString)]
+    public void OrEmpty_SourceIsNotNull_ExpectSourceValue(
+        string source)
+    {
+        var actual = Strings.OrEmpty(source);
+        Assert.AreSame(source, actual);
     }
 }

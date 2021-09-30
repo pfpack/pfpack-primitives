@@ -2,11 +2,10 @@
 
 using System.Runtime.CompilerServices;
 
-namespace System
+namespace System;
+
+public static class Pipeline
 {
-    public static class Pipeline
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static T Pipe<T>(T value) => value;
-    }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public static T Pipe<T>(T value) => value;
 }

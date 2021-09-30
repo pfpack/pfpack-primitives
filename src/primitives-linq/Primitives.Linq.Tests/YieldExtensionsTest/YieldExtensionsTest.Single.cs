@@ -3,30 +3,29 @@
 using NUnit.Framework;
 using System.Linq;
 
-namespace PrimeFuncPack.Primitives.Tests
+namespace PrimeFuncPack.Primitives.Tests;
+
+partial class YieldExtensionsTest
 {
-    partial class YieldExtensionsTest
+    [Test]
+    [TestCaseSource(typeof(ObjectTestData), nameof(ObjectTestData.NullableObjectTestSource))]
+    public void YieldSingle_ExpectCollectionLengthEqualsOne(
+        object? sourceValue)
     {
-        [Test]
-        [TestCaseSource(typeof(ObjectTestData), nameof(ObjectTestData.NullableObjectTestSource))]
-        public void YieldSingle_ExpectCollectionLengthEqualsOne(
-            object? sourceValue)
-        {
-            var actual = sourceValue.YieldSingle();
+        var actual = sourceValue.YieldSingle();
 
-            var actualLength = actual.Count();
-            Assert.AreEqual(1, actualLength);
-        }
+        var actualLength = actual.Count();
+        Assert.AreEqual(1, actualLength);
+    }
 
-        [Test]
-        [TestCaseSource(typeof(ObjectTestData), nameof(ObjectTestData.NullableObjectTestSource))]
-        public void YieldSingle_ExpectFirstItemIsSameAsSourceValue(
-            object? sourceValue)
-        {
-            var actual = sourceValue.YieldSingle();
+    [Test]
+    [TestCaseSource(typeof(ObjectTestData), nameof(ObjectTestData.NullableObjectTestSource))]
+    public void YieldSingle_ExpectFirstItemIsSameAsSourceValue(
+        object? sourceValue)
+    {
+        var actual = sourceValue.YieldSingle();
 
-            var actualFirst = actual.FirstOrDefault();
-            Assert.AreSame(sourceValue, actualFirst);
-        }
+        var actualFirst = actual.FirstOrDefault();
+        Assert.AreSame(sourceValue, actualFirst);
     }
 }

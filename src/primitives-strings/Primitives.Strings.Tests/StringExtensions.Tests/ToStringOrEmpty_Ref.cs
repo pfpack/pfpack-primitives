@@ -4,40 +4,39 @@ using NUnit.Framework;
 using System;
 using static PrimeFuncPack.UnitTest.TestData;
 
-namespace PrimeFuncPack.Primitives.Tests
+namespace PrimeFuncPack.Primitives.Tests;
+
+partial class StringExtensionsTests
 {
-    partial class StringExtensionsTests
+    [Test]
+    public void ToStringOrEmpty_Ref_SourceIsNull_ExpectEmpty()
     {
-        [Test]
-        public void ToStringOrEmpty_Ref_SourceIsNull_ExpectEmpty()
-        {
-            ToStringStubRefType? source = null;
+        ToStringStubRefType? source = null;
 
-            var actual = source.ToStringOrEmpty();
-            Assert.IsEmpty(actual);
-        }
+        var actual = source.ToStringOrEmpty();
+        Assert.IsEmpty(actual);
+    }
 
-        [Test]
-        public void ToStringOrEmpty_Ref_SourceToStringIsNull_ExpectEmpty()
-        {
-            ToStringStubRefType? source = new(null);
+    [Test]
+    public void ToStringOrEmpty_Ref_SourceToStringIsNull_ExpectEmpty()
+    {
+        ToStringStubRefType? source = new(null);
 
-            var actual = source.ToStringOrEmpty();
-            Assert.IsEmpty(actual);
-        }
+        var actual = source.ToStringOrEmpty();
+        Assert.IsEmpty(actual);
+    }
 
-        [Test]
-        [TestCase(EmptyString)]
-        [TestCase(WhiteSpaceString)]
-        [TestCase(TabString)]
-        [TestCase(SomeString)]
-        public void ToStringOrEmpty_Ref_SourceToStringIsNotNull_ExpectActualToStringValue(
-            string sourceToStringValue)
-        {
-            ToStringStubRefType? source = new(sourceToStringValue);
+    [Test]
+    [TestCase(EmptyString)]
+    [TestCase(WhiteSpaceString)]
+    [TestCase(TabString)]
+    [TestCase(SomeString)]
+    public void ToStringOrEmpty_Ref_SourceToStringIsNotNull_ExpectActualToStringValue(
+        string sourceToStringValue)
+    {
+        ToStringStubRefType? source = new(sourceToStringValue);
 
-            var actual = source.ToStringOrEmpty();
-            Assert.AreEqual(sourceToStringValue, actual);
-        }
+        var actual = source.ToStringOrEmpty();
+        Assert.AreEqual(sourceToStringValue, actual);
     }
 }
