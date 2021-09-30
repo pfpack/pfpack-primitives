@@ -10,6 +10,8 @@
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageProjectUrl>https://github.com/pfpack/pfpack-primitives</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/pfpack/pfpack-primitives</RepositoryUrl>
+    <Company>pfpack</Company>
     <Authors>Andrei Sergeev, Pavel Moskovoy</Authors>
     <Copyright>Copyright © 2020-2021 Andrei Sergeev, Pavel Moskovoy</Copyright>
     <Description>PrimeFuncPack Primitives is a core library for .NET consisting of useful extensions and predicates making work with functional pipelines, Linq, strings, the nullable feature, etc. easier.</Description>
