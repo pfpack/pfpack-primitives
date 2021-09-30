@@ -1,8 +1,7 @@
 ﻿#nullable enable
 
-namespace PrimeFuncPack.Primitives.Tests
+namespace PrimeFuncPack.Primitives.Tests;
+
+public sealed partial class StringExtensionsTests
 {
-    public sealed partial class StringExtensionsTests
-    {
-    }
 }
