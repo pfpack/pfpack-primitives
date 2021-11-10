@@ -4,8 +4,8 @@
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>disable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <InvariantGlobalization>true</InvariantGlobalization>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageReadmeFile>README.md</PackageReadmeFile>
@@ -17,7 +17,7 @@
     <Description>PrimeFuncPack Primitives.Linq is a core library for .NET consisting of useful extensions making work with Linq easier.</Description>
     <RootNamespace>System</RootNamespace>
     <AssemblyName>PrimeFuncPack.Primitives.Linq</AssemblyName>
-    <Version>2.0.0-preview.2.0.1</Version>
+    <Version>2.0.0-rc.1.0.0</Version>
   </PropertyGroup>
 
   <ItemGroup>
