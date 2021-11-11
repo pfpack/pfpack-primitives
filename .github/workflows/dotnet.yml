@@ -2,7 +2,7 @@ name: .NET
 
 on:
   push:
-    branches: [ master, dev, feature/*, fix/*, release/* ]
+    branches: [ master, dev, dev/*, feature/*, fix/*, release/* ]
 
   pull_request:
     branches: [ master ]
@@ -22,7 +22,7 @@ jobs:
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 6.0.x
-        include-prerelease: true
+        include-prerelease: false
 
     # Create Local NuGet Source
 
