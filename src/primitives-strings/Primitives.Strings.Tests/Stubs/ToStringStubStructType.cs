@@ -1,15 +1,12 @@
-﻿#nullable enable
+﻿namespace PrimeFuncPack.Primitives.Tests;
 
-namespace PrimeFuncPack.Primitives.Tests
+internal readonly struct ToStringStubStructType
 {
-    internal readonly struct ToStringStubStructType
-    {
-        private readonly string? toStringValue;
+    private readonly string? toStringValue;
 
-        public ToStringStubStructType(string? toStringValue)
-            => this.toStringValue = toStringValue;
+    public ToStringStubStructType(string? toStringValue)
+        => this.toStringValue = toStringValue;
 
-        public override string? ToString()
-            => toStringValue;
-    }
+    public override string? ToString()
+        => toStringValue;
 }

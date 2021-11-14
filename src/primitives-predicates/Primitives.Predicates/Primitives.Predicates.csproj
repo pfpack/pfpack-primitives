@@ -17,7 +17,7 @@
     <Description>PrimeFuncPack Primitives.Predicates is a core library for .NET consisting of useful extensions and predicates making work with the nullable feature easier.</Description>
     <RootNamespace>System</RootNamespace>
     <AssemblyName>PrimeFuncPack.Primitives.Predicates</AssemblyName>
-    <Version>2.0.0-rc.1.0.0</Version>
+    <Version>2.0.0-rc.1.0.1</Version>
   </PropertyGroup>
 
   <ItemGroup>

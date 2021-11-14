@@ -1,22 +1,19 @@
-﻿#nullable enable
-
-using NUnit.Framework;
+﻿using NUnit.Framework;
 using PrimeFuncPack.UnitTest;
 using System;
 
-namespace PrimeFuncPack.Primitives.Tests
+namespace PrimeFuncPack.Primitives.Tests;
+
+public sealed partial class PredicatesTests
 {
-    public sealed partial class PredicatesTests
+    // Test both some specific cases
+    [Test]
+    [TestCase(TestData.MinusOne)]
+    [TestCase(TestData.Zero)]
+    [TestCase(TestData.One)]
+    public void IsNotNull_NonnullableStruct_ExpectTrue(int source)
     {
-        // Test both some specific cases
-        [Test]
-        [TestCase(TestData.MinusOne)]
-        [TestCase(TestData.Zero)]
-        [TestCase(TestData.One)]
-        public void IsNotNull_NonnullableStruct_ExpectTrue(int source)
-        {
-            var actual = Predicates.IsNotNull(source);
-            Assert.True(actual);
-        }
+        var actual = Predicates.IsNotNull(source);
+        Assert.True(actual);
     }
 }
