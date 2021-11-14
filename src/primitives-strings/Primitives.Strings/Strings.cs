@@ -34,7 +34,7 @@ public static class Strings
         value?.ToString() ?? Empty;
 
     // TODO: Consider to delete the method in v3.0
-    [Obsolete(InternalObsoleteMessages.ToStringOrEmpty, error: true)]
+    [Obsolete(InternalObsoleteMessages.ToStringOrEmpty, error: InternalObsoleteErrors.ToStringOrEmpty)]
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static string ToStringOrEmpty<T>(T? value) where T : struct
         =>
