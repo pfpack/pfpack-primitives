@@ -1,8 +1,5 @@
-﻿#nullable enable
+﻿namespace PrimeFuncPack.Primitives.Tests;
 
-namespace PrimeFuncPack.Primitives.Tests
+public sealed partial class PredicatesTests
 {
-    public sealed partial class PredicatesTests
-    {
-    }
 }
