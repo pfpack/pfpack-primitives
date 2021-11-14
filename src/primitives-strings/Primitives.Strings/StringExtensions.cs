@@ -24,6 +24,8 @@ public static class StringExtensions
         =>
         Strings.ToStringOrEmpty(value);
 
+    // TODO: Consider to delete the method in v3.0
+    [Obsolete(InternalObsoleteMessages.ToStringOrEmpty, error: true)]
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static string ToStringOrEmpty<T>(this T? value) where T : struct
         =>
