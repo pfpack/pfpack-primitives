@@ -1,6 +1,4 @@
-﻿#nullable enable
-
-using NUnit.Framework;
+﻿using NUnit.Framework;
 using System.Linq;
 
 namespace PrimeFuncPack.Primitives.Tests;
