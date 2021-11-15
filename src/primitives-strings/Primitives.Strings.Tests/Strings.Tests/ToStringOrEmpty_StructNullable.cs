@@ -6,6 +6,7 @@ namespace PrimeFuncPack.Primitives.Tests;
 
 partial class StringsTests
 {
+    [Obsolete]
     [Test]
     public void ToStringOrEmpty_StructNullable_SourceIsNull_ExpectEmpty()
     {
@@ -15,6 +16,7 @@ partial class StringsTests
         Assert.IsEmpty(actual);
     }
 
+    [Obsolete]
     [Test]
     public void ToStringOrEmpty_StructNullable_SourceToStringIsNull_ExpectEmpty()
     {
@@ -24,6 +26,7 @@ partial class StringsTests
         Assert.IsEmpty(actual);
     }
 
+    [Obsolete]
     [Test]
     [TestCase(EmptyString)]
     [TestCase(WhiteSpaceString)]
