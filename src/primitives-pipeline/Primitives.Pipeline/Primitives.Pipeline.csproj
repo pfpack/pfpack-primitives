@@ -17,7 +17,7 @@
     <Description>PrimeFuncPack Primitives.Pipeline is a core library for .NET consisting of useful extensions making work with functional pipelines easier.</Description>
     <RootNamespace>System</RootNamespace>
     <AssemblyName>PrimeFuncPack.Primitives.Pipeline</AssemblyName>
-    <Version>2.0.0-rc.1.0.1</Version>
+    <Version>2.0.0-rc.1.0.2</Version>
   </PropertyGroup>
 
   <ItemGroup>
