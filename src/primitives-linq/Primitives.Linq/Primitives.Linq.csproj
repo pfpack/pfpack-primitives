@@ -13,7 +13,7 @@
     <RepositoryUrl>https://github.com/pfpack/pfpack-primitives</RepositoryUrl>
     <Company>pfpack</Company>
     <Authors>Andrei Sergeev, Pavel Moskovoy</Authors>
-    <Copyright>Copyright © 2020-2021 Andrei Sergeev, Pavel Moskovoy</Copyright>
+    <Copyright>Copyright © 2020-2022 Andrei Sergeev, Pavel Moskovoy</Copyright>
     <Description>PrimeFuncPack Primitives.Linq is a core library for .NET consisting of very basic extensions to work with Linq.</Description>
     <RootNamespace>System</RootNamespace>
     <AssemblyName>PrimeFuncPack.Primitives.Linq</AssemblyName>
