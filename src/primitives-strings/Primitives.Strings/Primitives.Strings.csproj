@@ -13,11 +13,11 @@
     <RepositoryUrl>https://github.com/pfpack/pfpack-primitives</RepositoryUrl>
     <Company>pfpack</Company>
     <Authors>Andrei Sergeev, Pavel Moskovoy</Authors>
-    <Copyright>Copyright © 2020-2021 Andrei Sergeev, Pavel Moskovoy</Copyright>
-    <Description>PrimeFuncPack Primitives.Strings is a core library for .NET consisting of useful extensions making work with strings easier.</Description>
+    <Copyright>Copyright © 2020-2022 Andrei Sergeev, Pavel Moskovoy</Copyright>
+    <Description>PrimeFuncPack Primitives.Strings is a core library for .NET consisting of very basic extensions to work with strings.</Description>
     <RootNamespace>System</RootNamespace>
     <AssemblyName>PrimeFuncPack.Primitives.Strings</AssemblyName>
-    <Version>2.0.0</Version>
+    <Version>2.0.1-rc.1.0.0</Version>
   </PropertyGroup>
 
   <ItemGroup>

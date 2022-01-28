@@ -11,7 +11,7 @@ partial class StringsTests
     [Test]
     public void ToStringOrEmpty_ExpectIsObsoleteWithError()
     {
-        const string expectedObsoleteMessage = "This method is obsolete. Consider to call obj?.ToString().OrEmpty() instead.";
+        const string expectedObsoleteMessage = "This method is obsolete. Consider to call (obj?.ToString()).OrEmpty() instead.";
 
         IReadOnlyCollection<MethodInfo> methods = typeof(Strings)
             .GetMethods(BindingFlags.Public | BindingFlags.Static)
