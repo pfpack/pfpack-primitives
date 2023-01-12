@@ -29,7 +29,7 @@ jobs:
 
     - name: Create Local NuGet Directory
       run: mkdir ~/nuget
-      
+
     - name: Add Local Nuget Source
       run: dotnet nuget add source ~/nuget
 
