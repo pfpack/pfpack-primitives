@@ -2,5 +2,5 @@
 
 internal static class InternalObsoleteErrors
 {
-    public const bool ToStringOrEmpty = true;
+    internal const bool ToStringOrEmpty = true;
 }
