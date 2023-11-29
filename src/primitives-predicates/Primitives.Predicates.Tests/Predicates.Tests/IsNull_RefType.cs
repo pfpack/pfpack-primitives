@@ -13,7 +13,7 @@ partial class PredicatesTests
         RefType source = null!;
 
         var actual = Predicates.IsNull(source);
-        Assert.True(actual);
+        Assert.That(actual, Is.True);
     }
 
     [Test]
@@ -22,6 +22,6 @@ partial class PredicatesTests
         var source = MinusFifteenIdRefType;
 
         var actual = Predicates.IsNull(source);
-        Assert.False(actual);
+        Assert.That(actual, Is.False);
     }
 }

@@ -13,7 +13,7 @@ partial class PipelineExtensionsTests
     {
         var actual = sourceValue.Pipe(value => (value, PlusFifteen));
         var expected = (sourceValue, PlusFifteen);
-        Assert.AreSame(expected.sourceValue, sourceValue);
-        Assert.AreEqual(expected, actual);
+        Assert.That(sourceValue, Is.SameAs(expected.sourceValue));
+        Assert.That(actual, Is.EqualTo(expected));
     }
 }

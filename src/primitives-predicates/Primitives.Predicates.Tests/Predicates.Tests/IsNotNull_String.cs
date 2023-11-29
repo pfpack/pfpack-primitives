@@ -12,7 +12,7 @@ public sealed partial class PredicatesTests
         string source = null!;
 
         var actual = Predicates.IsNotNull(source);
-        Assert.False(actual);
+        Assert.That(actual, Is.False);
     }
 
     [Test]
@@ -23,6 +23,6 @@ public sealed partial class PredicatesTests
     public void IsNotNull_StringIsNotNull_ExpectTrue(string? source)
     {
         var actual = Predicates.IsNotNull(source);
-        Assert.True(actual);
+        Assert.That(actual, Is.True);
     }
 }

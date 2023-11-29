@@ -14,6 +14,6 @@ public sealed partial class PredicatesTests
     public void IsNotNull_NonnullableStruct_ExpectTrue(int source)
     {
         var actual = Predicates.IsNotNull(source);
-        Assert.True(actual);
+        Assert.That(actual, Is.True);
     }
 }

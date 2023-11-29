@@ -11,6 +11,6 @@ partial class PipelineTests
         object? sourceValue)
     {
         var actual = Pipeline.Pipe(sourceValue);
-        Assert.AreSame(sourceValue, actual);
+        Assert.That(actual, Is.SameAs(sourceValue));
     }
 }

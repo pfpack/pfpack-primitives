@@ -12,7 +12,7 @@ partial class PredicateExtensionsTests
         object source = null!;
 
         var actual = source.IsNull();
-        Assert.True(actual);
+        Assert.That(actual, Is.True);
     }
 
     [Test]
@@ -21,6 +21,6 @@ partial class PredicateExtensionsTests
         var source = ZeroIdRefType;
 
         var actual = source.IsNull();
-        Assert.False(actual);
+        Assert.That(actual, Is.False);
     }
 }

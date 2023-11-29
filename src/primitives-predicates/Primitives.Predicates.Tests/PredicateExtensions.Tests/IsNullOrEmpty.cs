@@ -12,7 +12,7 @@ partial class PredicateExtensionsTests
         string? source = null;
 
         var actual = source.IsNullOrEmpty();
-        Assert.True(actual);
+        Assert.That(actual, Is.True);
     }
 
     [Test]
@@ -21,7 +21,7 @@ partial class PredicateExtensionsTests
         string source = string.Empty;
 
         var actual = source.IsNullOrEmpty();
-        Assert.True(actual);
+        Assert.That(actual, Is.True);
     }
 
     [Test]
@@ -32,6 +32,6 @@ partial class PredicateExtensionsTests
         string source)
     {
         var actual = source.IsNullOrEmpty();
-        Assert.False(actual);
+        Assert.That(actual, Is.False);
     }
 }

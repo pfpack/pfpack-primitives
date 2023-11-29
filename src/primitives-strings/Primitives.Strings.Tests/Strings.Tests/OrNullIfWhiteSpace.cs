@@ -15,7 +15,7 @@ partial class StringsTests
         string? source)
     {
         var actual = Strings.OrNullIfWhiteSpace(source);
-        Assert.IsNull(actual);
+        Assert.That(actual, Is.Null);
     }
 
     [Test]
@@ -25,6 +25,6 @@ partial class StringsTests
         string? source)
     {
         var actual = Strings.OrNullIfWhiteSpace(source);
-        Assert.AreSame(source, actual);
+        Assert.That(actual, Is.SameAs(source));
     }
 }

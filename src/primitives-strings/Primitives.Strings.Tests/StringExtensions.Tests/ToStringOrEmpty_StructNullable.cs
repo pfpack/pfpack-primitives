@@ -13,7 +13,7 @@ partial class StringExtensionsTests
         ToStringStubStructType? source = null;
 
         var actual = source.ToStringOrEmpty();
-        Assert.IsEmpty(actual);
+        Assert.That(actual, Is.Empty);
     }
 
     [Obsolete]
@@ -23,7 +23,7 @@ partial class StringExtensionsTests
         ToStringStubStructType? source = new(null);
 
         var actual = source.ToStringOrEmpty();
-        Assert.IsEmpty(actual);
+        Assert.That(actual, Is.Empty);
     }
 
     [Obsolete]
@@ -38,6 +38,6 @@ partial class StringExtensionsTests
         ToStringStubStructType? source = new(sourceToStringValue);
 
         var actual = source.ToStringOrEmpty();
-        Assert.AreEqual(sourceToStringValue, actual);
+        Assert.That(actual, Is.EqualTo(sourceToStringValue));
     }
 }
