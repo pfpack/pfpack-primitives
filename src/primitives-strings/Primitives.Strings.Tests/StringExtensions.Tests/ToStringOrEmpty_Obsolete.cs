@@ -18,9 +18,9 @@ partial class StringExtensionsTests
             .Where(method => method.Name == nameof(StringExtensions.ToStringOrEmpty))
             .ToArray();
 
-        Assert.AreEqual(2, methods.Count);
+        Assert.That(methods.Count, Is.EqualTo(2));
 
-        Assert.IsTrue(
+        Assert.That(
             methods.All(
                 method => method.CustomAttributes.Any(
                     attr
@@ -30,6 +30,7 @@ partial class StringExtensionsTests
                     attr.ConstructorArguments[0].ArgumentType == typeof(string) &&
                     attr.ConstructorArguments[0].Value is expectedObsoleteMessage &&
                     attr.ConstructorArguments[1].ArgumentType == typeof(bool) &&
-                    attr.ConstructorArguments[1].Value is true)));
+                    attr.ConstructorArguments[1].Value is true)),
+            Is.True);
     }
 }

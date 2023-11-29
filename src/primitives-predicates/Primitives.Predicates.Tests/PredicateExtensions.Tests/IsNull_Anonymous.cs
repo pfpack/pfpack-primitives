@@ -15,6 +15,6 @@ partial class PredicateExtensionsTests
         };
 
         var actual = source.IsNull();
-        Assert.False(actual);
+        Assert.That(actual, Is.False);
     }
 }

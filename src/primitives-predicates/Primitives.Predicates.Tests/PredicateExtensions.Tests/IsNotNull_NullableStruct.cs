@@ -11,7 +11,7 @@ partial class PredicateExtensionsTests
         int? source = null;
 
         var actual = source.IsNotNull();
-        Assert.False(actual);
+        Assert.That(actual, Is.False);
     }
 
     [Test]
@@ -20,7 +20,7 @@ partial class PredicateExtensionsTests
         int? source = null;
 
         var actual = source.IsNotNull<object>();
-        Assert.False(actual);
+        Assert.That(actual, Is.False);
     }
 
     // Test both zero and non-zero values
@@ -30,7 +30,7 @@ partial class PredicateExtensionsTests
     public void IsNotNull_NullableStructIsNotNull_CallStructOverload_ExpectTrue(int? source)
     {
         var actual = source.IsNotNull();
-        Assert.True(actual);
+        Assert.That(actual, Is.True);
     }
 
     // Test both zero and non-zero values
@@ -40,6 +40,6 @@ partial class PredicateExtensionsTests
     public void IsNotNull_NullableStructIsNotNull_CallObjectOverload_ExpectTrue(int? source)
     {
         var actual = source.IsNotNull<object>();
-        Assert.True(actual);
+        Assert.That(actual, Is.True);
     }
 }

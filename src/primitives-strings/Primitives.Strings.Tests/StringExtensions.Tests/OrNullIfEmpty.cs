@@ -12,7 +12,7 @@ partial class StringExtensionsTests
         string? source = string.Empty;
 
         var actual = source.OrNullIfEmpty();
-        Assert.IsNull(actual);
+        Assert.That(actual, Is.Null);
     }
 
     [Test]
@@ -24,6 +24,6 @@ partial class StringExtensionsTests
         string? source)
     {
         var actual = source.OrNullIfEmpty();
-        Assert.AreSame(source, actual);
+        Assert.That(actual, Is.SameAs(source));
     }
 }

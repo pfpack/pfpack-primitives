@@ -15,6 +15,6 @@ public sealed partial class PredicatesTests
         };
 
         var actual = Predicates.IsNotNull(source);
-        Assert.True(actual);
+        Assert.That(actual, Is.True);
     }
 }

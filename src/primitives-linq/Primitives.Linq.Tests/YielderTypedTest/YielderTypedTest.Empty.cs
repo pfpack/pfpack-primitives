@@ -10,6 +10,6 @@ partial class YielderTypedTest
     public void YieldEmpty_ExpectEmptyCollection()
     {
         var actual = Yielder<StructType?>.YieldEmpty();
-        Assert.IsEmpty(actual);
+        Assert.That(actual, Is.Empty);
     }
 }

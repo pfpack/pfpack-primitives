@@ -9,13 +9,13 @@ partial class StringsTests
     public void Empty_ExpectEmptyString()
     {
         var actual = Strings.Empty;
-        Assert.IsEmpty(actual);
+        Assert.That(actual, Is.Empty);
     }
 
     [Test]
     public void GetEmpty_ExpectEmptyString()
     {
         var actual = Strings.GetEmpty();
-        Assert.IsEmpty(actual);
+        Assert.That(actual, Is.Empty);
     }
 }

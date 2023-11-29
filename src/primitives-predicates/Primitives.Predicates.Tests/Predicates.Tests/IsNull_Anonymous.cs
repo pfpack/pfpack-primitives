@@ -15,6 +15,6 @@ partial class PredicatesTests
         };
 
         var actual = Predicates.IsNull(source);
-        Assert.False(actual);
+        Assert.That(actual, Is.False);
     }
 }

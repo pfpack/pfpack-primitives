@@ -13,7 +13,7 @@ partial class YielderTest
         var actual = Yielder.YieldSingle(sourceValue);
 
         var actualLength = actual.Count();
-        Assert.AreEqual(1, actualLength);
+        Assert.That(actualLength, Is.EqualTo(1));
     }
 
     [Test]
@@ -24,6 +24,6 @@ partial class YielderTest
         var actual = Yielder.YieldSingle(sourceValue);
 
         var actualFirst = actual.FirstOrDefault();
-        Assert.AreSame(sourceValue, actualFirst);
+        Assert.That(actualFirst, Is.SameAs(sourceValue));
     }
 }

@@ -12,6 +12,6 @@ partial class PredicateExtensionsTests
     public void IsNotNull_NonnullableStruct_ExpectTrue(int source)
     {
         var actual = source.IsNotNull();
-        Assert.True(actual);
+        Assert.That(actual, Is.True);
     }
 }
