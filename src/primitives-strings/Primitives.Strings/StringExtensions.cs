@@ -18,18 +18,4 @@ public static class StringExtensions
     public static string? OrNullIfWhiteSpace(this string? value)
         =>
         Strings.OrNullIfWhiteSpace(value);
-
-    // TODO: Consider to delete the method in v3.0
-    [Obsolete(InternalObsoleteMessages.ToStringOrEmpty, error: InternalObsoleteErrors.ToStringOrEmpty)]
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static string ToStringOrEmpty<T>(this T? value)
-        =>
-        Strings.ToStringOrEmpty(value);
-
-    // TODO: Consider to delete the method in v3.0
-    [Obsolete(InternalObsoleteMessages.ToStringOrEmpty, error: InternalObsoleteErrors.ToStringOrEmpty)]
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static string ToStringOrEmpty<T>(this T? value) where T : struct
-        =>
-        Strings.ToStringOrEmpty(value);
 }
