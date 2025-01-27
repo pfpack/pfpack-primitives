@@ -19,7 +19,7 @@
     <Description>PrimeFuncPack Primitives is a core library pack for .NET consisting of very basic extensions to work with functional pipelines, Linq, strings, the nullable feature, etc.</Description>
     <RootNamespace>System</RootNamespace>
     <AssemblyName>PrimeFuncPack.Primitives</AssemblyName>
-    <Version>3.0.0-rc.1</Version>
+    <Version>3.0.0</Version>
   </PropertyGroup>
 
   <ItemGroup>
@@ -34,10 +34,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="PrimeFuncPack.Primitives.Linq" Version="3.0.0-rc.1" />
-    <PackageReference Include="PrimeFuncPack.Primitives.Pipeline" Version="3.0.0-rc.1" />
-    <PackageReference Include="PrimeFuncPack.Primitives.Predicates" Version="3.0.0-rc.1" />
-    <PackageReference Include="PrimeFuncPack.Primitives.Strings" Version="3.0.0-rc.1" />
+    <PackageReference Include="PrimeFuncPack.Primitives.Linq" Version="3.0.0" />
+    <PackageReference Include="PrimeFuncPack.Primitives.Pipeline" Version="3.0.0" />
+    <PackageReference Include="PrimeFuncPack.Primitives.Predicates" Version="3.0.0" />
+    <PackageReference Include="PrimeFuncPack.Primitives.Strings" Version="3.0.0" />
   </ItemGroup>
 
 </Project>
